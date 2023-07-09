@@ -1,2 +1,2 @@
 def start():
-    print('Тестовое Python приложение запущено')
+    print('Test Python app to be run')

@@ -14,7 +14,7 @@ schema = StructType([
 ])
 
 def start():
-    print('Тестовое Pyspark приложение запущено')
+    print('Test Pyspark app to be run')
     print(spark.sparkContext.applicationId)
     #Create empty DataFrame from empty RDD
     df = spark.createDataFrame(emptyRDD, schema)

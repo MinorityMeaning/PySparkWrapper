@@ -1,4 +1,4 @@
-ThisBuild / version := "0.1.0-SNAPSHOT"
+ThisBuild / version := "0.9.0"
 
 ThisBuild / scalaVersion := "2.12.15"
 
@@ -8,5 +8,5 @@ lazy val root = (project in file("."))
   )
 
 libraryDependencies ++= Seq(
-  "org.apache.spark"   %% "spark-sql"     % "3.2.1"
+  "org.apache.spark" %% "spark-sql" % "3.2.1" % Provided
 )

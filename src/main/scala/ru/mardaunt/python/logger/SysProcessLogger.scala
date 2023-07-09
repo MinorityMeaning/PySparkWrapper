@@ -4,11 +4,11 @@ import org.apache.log4j.Logger
 
 import scala.sys.process.ProcessLogger
 
-/** Класс, создающий экземпляр ProcessLogger, для логирования подпроцессов, запускаемых библиотекой sys.
+/** A class that creates an instance of ProcessLogger, for logging subprocesses started by the system library.
  */
 class SysProcessLogger(logger: Logger) {
 
-  /** Получить экземпляр ProcessLogger, пользующийся средствами логирования фреймворка Murphy.
+  /** Get instance ProcessLogger.
    */
   protected def get: ProcessLogger = ProcessLogger(out(_), err(_))
 
@@ -16,11 +16,11 @@ class SysProcessLogger(logger: Logger) {
   protected def err(s: => String): Unit = logger.error(s, null)
 }
 
-/** Объект-компаньон, предоставляющий экземпляр ProcessLogger, для логирования подпроцессов, запускаемых библиотекой sys.
+/** A companion object representing an instance of ProcessLogger for logging subprocesses run by the sys library.
  *
- * Пример:
+ * Example:
  * {{{
- * import ru.sberbank.xops.murphy.core.log.SysProcessLogger
+ * import ru.mardaunt.python.logger.SysProcessLogger
  * import scala.sys.process._
  *
  * class Example {
@@ -30,8 +30,8 @@ class SysProcessLogger(logger: Logger) {
  */
 object SysProcessLogger {
 
-  /** Создать экземпляр ProcessLogger.
-   * @return Экземпляр ProcessLogger.
+  /** Create instance ProcessLogger.
+   * @return Instance ProcessLogger.
    */
   def apply(): ProcessLogger = new SysProcessLogger(logger = SimpleLogger()).get
 
