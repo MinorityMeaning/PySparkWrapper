@@ -6,13 +6,13 @@ import org.apache.commons.compress.utils.IOUtils
 import java.io.{BufferedOutputStream, File, FileInputStream}
 import java.nio.file.{Files, Path}
 
-/** Утилита для архивирования файлов и директорий.
+/** Utility for archiving files and directories.
  */
 class ZipFileCompressor {
 
-  /** Создать zip-архив.
-   * @param zipFilePath Полный путь архива, включая имя будущего zip-архива.
-   * @param fileOrDirectoryToZip Экземпляр файла или директории, которую необходимо архивировать.
+  /** Create a zip archive.
+   * @param zipFilePath The full path of the archive, including the name of the future zip archive.
+   * @param fileOrDirectoryToZip An instance of the file or directory to archive.
    */
   def createZipFile(zipFilePath: Path, fileOrDirectoryToZip: File): Unit = {
     val outputStream = Files.newOutputStream(zipFilePath)
@@ -24,10 +24,10 @@ class ZipFileCompressor {
     outputStream.close()
   }
 
-  /** Добавить файл или директорию в поток будущего архива.
-   * @param zipArchiveOutputStream Экземпляр потока ZipArchiveOutputStream.
-   * @param fileToZip Файл или директория для добавления в поток ZipArchiveOutputStream.
-   * @param base Разделитель для имени добавляемого файла.
+  /** Add a file or directory to the stream of the future archive.
+   * @param zipArchiveOutputStream Stream Instance ZipArchiveOutputStream.
+   * @param fileToZip File or directory to add to the stream ZipArchiveOutputStream.
+   * @param base Separator for the name of the file being added.
    */
   private def addFileToZipStream(zipArchiveOutputStream: ZipArchiveOutputStream, fileToZip: File, base: String): Unit = {
 

@@ -1,4 +1,4 @@
-from python_app.someone import start
+from someone import start
 
 print('Ъуъ')
 start()
