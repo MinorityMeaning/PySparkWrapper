@@ -13,6 +13,9 @@ sonatypeProjectHosting := Some(GitHubHosting("Mardaunt", "PySparkWrapper", "tepe
 
 publishTo := sonatypePublishToBundle.value
 
+sonatypeCredentialHost := "s01.oss.sonatype.org"
+sonatypeRepository := "https://s01.oss.sonatype.org/service/local"
+
 lazy val root = (project in file("."))
   .settings(
     name := "PySparkWrapper"
@@ -21,6 +24,3 @@ lazy val root = (project in file("."))
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % "3.2.1" % Provided
 )
-
-
-
