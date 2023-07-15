@@ -42,7 +42,7 @@ The need may be caused by the lack of the ability to rewrite the code from one l
   ```
 
 - Prepare your PySpark application and place it in the resources.
-![](https://raw.githubusercontent.com/MinorityMeaning/PySparkWrapper/img/packages.png)
+<img width=400 src="https://raw.githubusercontent.com/MinorityMeaning/PySparkWrapper/img/packages.png">
 
 - Create a class that will be responsible for preparing the PySpark application for launch.
   To do this, extend the abstract PySparkApp class. This will be a kind of wrapper class over the python project.
@@ -60,8 +60,8 @@ The need may be caused by the lack of the ability to rewrite the code from one l
     override protected val starterTool: String = "spark-submit"
   }
   ```
-> Note that the name of the package where the wrapper class is stored must match the name of the python application package in the resources.
-> In our case, is: ``ru.example``
+  > Note that the name of the package where the wrapper class is stored must match the name of the python application package in the resources.
+  > In our case, is: ``ru.example``
 
 - The application is ready to launch:
   ```Scala
