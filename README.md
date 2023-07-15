@@ -102,6 +102,10 @@ Congratulations! Now you know how to use the library.
     val args = List("a", "b", "c")
     new PySparkDemo(spark, SimpleLogger()).run(args)
   ```
+  Or override the wrapper class field:
+  ```Scala
+    override protected val pythonArgs: List[String] = List("a", "b", "c")
+  ```
 
 ### How do I enable kerberos authorization?
 - By default, Kerberos authorization is enabled. But you can control authorization using a flag from the wrapper class:
