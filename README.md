@@ -90,10 +90,10 @@ Congratulations! Now you know how to use the library.
 - Override the field of the python wrapper child class of the project:
   ```Scala
       override protected val additionalSparkConfList: List[String] =
-      List(
-        "--conf", "spark.app.name=MY_FAVORITE_APP",
-        "--conf", "spark.driver.cores=4"
-      )
+        List(
+          "--conf", "spark.app.name=MY_FAVORITE_APP",
+          "--conf", "spark.driver.cores=4"
+        )
   ```
 
 ### How to pass arguments to the PySpark App?
@@ -111,4 +111,18 @@ Congratulations! Now you know how to use the library.
 - By default, Kerberos authorization is enabled. But you can control authorization using a flag from the wrapper class:
   ```Scala
     needKerberosAuth = false
+  ```
+
+### I need specific dependencies in python. How can I use my dependencies in a PySpark app?
+
+- To do this, you should already have a python environment with installed libraries.
+  Then you can configure your PySpark app by passing the path to the python interpreter to the driver and executors:
+  ```Scala
+      override protected val additionalSparkConfList: List[String] =
+        List(
+          "--conf", "spark.app.name=MY_FAVORITE_APP",
+          "--conf", "spark.driver.cores=4",
+          "--conf", "spark.pyspark.python=/your/python/loc/bin/python",
+          "--conf", "spark.pyspark.driver.python=/your/python/loc/bin/python"
+        )
   ```
